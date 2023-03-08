@@ -14,7 +14,7 @@ export const PostPage = () => {
     const { userInfo } = useContext(UserContext);
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:4000/post/${id}`)
+        fetch(`https://mern-blog-backend-drtw.onrender.com/post/${id}`)
             .then(response => {
                 response.json().then(postInfo => {
                     setPostInfo(postInfo);
@@ -26,7 +26,7 @@ export const PostPage = () => {
     if (!postInfo) return '';
 
     const sh = new Simplesharer();
-    sh.url = `http://localhost:3000/post/${id}`; //your url
+    sh.url = `https://dailydevdot.netlify.app/post/${id}`; //your url
 
 
     return (
@@ -49,7 +49,7 @@ export const PostPage = () => {
 
 
                 <div className="post-page-image">
-                    <img src={`http://localhost:4000/${postInfo.cover}`} />
+                    <img src={`https://mern-blog-backend-drtw.onrender.com/${postInfo.cover}`} />
                 </div>
                 <h1 className="post-page-heading">{postInfo.title}</h1>
                 <div className="post-page-info">
